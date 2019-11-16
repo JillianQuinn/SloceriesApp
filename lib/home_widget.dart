@@ -13,8 +13,9 @@ class _HomeState extends State<Home> {
   int _currentIndex = 0;
   final List<Widget> _children = [
     PlaceholderWidget(Colors.white),
+    PlaceholderWidget(Colors.blue),
     PlaceholderWidget(Colors.deepOrange),
-    PlaceholderWidget(Colors.green)
+    PlaceholderWidget(Colors.blueGrey)
   ];
   @override
   Widget build(BuildContext context) {
@@ -29,6 +30,7 @@ class _HomeState extends State<Home> {
         items: [
           new BottomNavigationBarItem(
             icon: Icon(Icons.home),
+            backgroundColor: Colors.green,
             title: Text('Home'),
           ),
           new BottomNavigationBarItem(
@@ -37,8 +39,13 @@ class _HomeState extends State<Home> {
           ),
           new BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            title: Text('Profile')
-          )
+            title: Text('Profile'),
+          ),
+          new BottomNavigationBarItem(
+            icon: Icon(Icons.add),
+            title: Text('Test'),
+          ),
+          
         ],
       ),
       
