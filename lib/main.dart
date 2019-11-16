@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.green,
       ),
-      home: MyHomePage(title: 'Sloceries'),
+      home: MyHomePage(title: 'SLOCERIES'),
     );
   }
 }
