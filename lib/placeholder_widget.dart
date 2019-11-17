@@ -8,7 +8,48 @@ class HomeWidget extends StatelessWidget {
         title: Text('Feed'),
       ),
       body: Center(
-        //Add Code Here
+        child: ListView.builder(
+          itemCount: feedModel.dummyData.length,
+          itemBuilder: (context, index) {
+            feedModel _model = feedModel.dummyData[index];
+            return Column(
+              children: <Widget>[
+                Divider(
+                  height: 12.0,
+                ),
+                ListTile(
+                  onTap: () {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SecondRoute()),
+                  );
+                  },
+                  leading: CircleAvatar(
+                    radius: 24.0,
+                    backgroundImage: NetworkImage(_model.avatarUrl),
+                  ),
+                  title: Row(
+                    children: <Widget>[
+                      Text(_model.name),
+                      SizedBox(
+                        width: 4.0,
+                      ),
+                      Text(
+                        _model.datetime,
+                        style: TextStyle(fontSize: 16.0),
+                      ),
+                    ],
+                  ),
+                  subtitle: Text(_model.message),
+                  trailing: Icon(
+                    Icons.chevron_right,
+                    size: 35.0,
+                  ),
+                ),
+              ],
+            );
+          },
+        ),
       ),
     );
   }
@@ -212,6 +253,48 @@ class SecondRoute extends StatelessWidget {
       ),
     );
   }
+}
+
+class feedModel {
+  final String avatarUrl;
+  final String name;
+  final String datetime;
+  final String message;
+
+  feedModel({this.avatarUrl, this.name, this.datetime, this.message});
+
+  static final List<feedModel> dummyData = [
+    feedModel(
+      avatarUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Target_Corporation_logo_%28vector%29.svg/1200px-Target_Corporation_logo_%28vector%29.svg.png",
+      name: "Target -",
+      datetime: "Tuesday, 1:30pm",
+      message: "4 Seats Available",
+    ),
+    feedModel(
+      avatarUrl: "https://media.licdn.com/dms/image/C4D0BAQFgmh2pajt3jQ/company-logo_200_200/0?e=2159024400&v=beta&t=PvgNnkl06fFOyEuieerGDaPk9Gk7xZLaXit4ePzszhs",
+      name: "Costco -",
+      datetime: "Tuesday, 4:00pm",
+      message: "3 Seats Available",
+    ),
+    feedModel(
+      avatarUrl: "http://logo-load.com/uploads/posts/2016-08/trader-joes-logo.png",
+      name: "Trader Joe's -",
+      datetime: "Tuesday, 5:45pm",
+      message: "1 Seat Available",
+    ),
+    feedModel(
+      avatarUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Target_Corporation_logo_%28vector%29.svg/1200px-Target_Corporation_logo_%28vector%29.svg.png",
+      name: "Target -",
+      datetime: "Wednesday, 7:35pm",
+      message: "4 Seats Available",
+    ),
+    feedModel(
+      avatarUrl: "https://media.licdn.com/dms/image/C4D0BAQFgmh2pajt3jQ/company-logo_200_200/0?e=2159024400&v=beta&t=PvgNnkl06fFOyEuieerGDaPk9Gk7xZLaXit4ePzszhs",
+      name: "Costco -",
+      datetime: "Wednesday, 08:15pm",
+      message: "2 Seats Available",
+    ),
+  ];
 }
 
 
