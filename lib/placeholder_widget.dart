@@ -358,6 +358,7 @@ class ProfileWidget extends StatelessWidget {
 
 class AddWidget extends StatelessWidget {
   final GlobalKey<FormState> _formKey = new GlobalKey<FormState>();
+  bool driver;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -372,10 +373,21 @@ class AddWidget extends StatelessWidget {
               child: new ListView(
                 children: <Widget>[
                   new TextFormField(
-                      keyboardType: TextInputType.text, // Use email input type for emails.
+                    keyboardType: TextInputType.text,
+                    decoration: new InputDecoration(
+                        hintText: 'First Name Last Name',
+                        labelText: 'Name'
+                    ),
+                    onSaved: (String value)
+                    {
+                      //this._data.email = value;
+                    },
+                  ),
+                  new TextFormField(
+                      keyboardType: TextInputType.text,
                       decoration: new InputDecoration(
-                          hintText: 'Firstname Lastname',
-                          labelText: 'Name'
+                          hintText: 'ex: Trader Joes',
+                          labelText: 'Store'
                       ),
                       onSaved: (String value)
                       {
@@ -383,10 +395,42 @@ class AddWidget extends StatelessWidget {
                       }
                   ),
                   new TextFormField(
-                      keyboardType: TextInputType.number, // Use secure text for passwords.
+                      keyboardType: TextInputType.datetime,
                       decoration: new InputDecoration(
-                          hintText: 'ex: \$10',
-                          labelText: 'Price: '
+                          hintText: 'ex: 11/16/2019',
+                          labelText: 'Date: '
+                      ),
+                      onSaved: (String value)
+                      {
+                        //this._data.email = value;
+                      }
+                  ),
+                  new TextFormField(
+                      keyboardType: TextInputType.datetime,
+                      decoration: new InputDecoration(
+                          hintText: 'ex: 3:00 pm',
+                          labelText: 'Time: '
+                      ),
+                      onSaved: (String value)
+                      {
+                        //this._data.email = value;
+                      }
+                  ),
+                  new TextFormField(
+                      keyboardType: TextInputType.number,
+                      decoration: new InputDecoration(
+                          hintText: 'ex: 3',
+                          labelText: 'Seats Avaliable: '
+                      ),
+                      onSaved: (String value) {
+                        //this._data.password = value;
+                      }
+                  ),
+                  new TextFormField(
+                      keyboardType: TextInputType.multiline,
+                      decoration: new InputDecoration(
+                          hintText: '',
+                          labelText: 'Message: '
                       ),
                       onSaved: (String value) {
                         //this._data.password = value;
@@ -401,8 +445,14 @@ class AddWidget extends StatelessWidget {
                             color: Colors.white
                         ),
                       ),
-                      //onPressed: this.submit,
                       color: Colors.blue,
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => HomeWidget()),
+                        );
+                      },
+
                     ),
                     margin: new EdgeInsets.only(
                         top: 20.0
@@ -417,6 +467,7 @@ class AddWidget extends StatelessWidget {
     );
   }
 }
+
 
 class FirstRoute extends StatelessWidget {
   @override
