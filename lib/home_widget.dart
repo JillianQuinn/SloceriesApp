@@ -12,10 +12,10 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    HomeWidget(Colors.white),
-    MessagesWidget(Colors.blue),
-    ProfileWidget(Colors.deepOrange),
-    AddWidget(Colors.blueGrey)
+    HomeWidget(),
+    MessagesWidget(),
+    ProfileWidget(),
+    AddWidget()
   ];
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class _HomeState extends State<Home> {
           new BottomNavigationBarItem(
             icon: Icon(Icons.add),
             backgroundColor: Colors.green,
-            title: Text('Test'),
+            title: Text('Add Trip'),
           ),
         ],
       ),

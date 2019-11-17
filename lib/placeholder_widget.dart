@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
 class HomeWidget extends StatelessWidget {
-  final Color color;
-  HomeWidget(this.color);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Home Page'),
+        title: Text('Feed'),
       ),
       body: Center(
         //Add Code Here
@@ -17,13 +15,11 @@ class HomeWidget extends StatelessWidget {
 }
 
 class MessagesWidget extends StatelessWidget {
-  final Color color;
-  MessagesWidget(this.color);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Messages Page'),
+        title: Text('Messages'),
       ),
       body: Center(
         //Add Code Here
@@ -33,13 +29,11 @@ class MessagesWidget extends StatelessWidget {
 }
 
 class ProfileWidget extends StatelessWidget {
-  final Color color;
-  ProfileWidget(this.color);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile Page'),
+        title: Text('Profile'),
       ),
       body: Center(
         //Add Code Here
@@ -49,13 +43,11 @@ class ProfileWidget extends StatelessWidget {
 }
 
 class AddWidget extends StatelessWidget {
-  final Color color;
-  AddWidget(this.color);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Route'),
+        title: Text('Add a Trip'),
       ),
       body: Center(
         //Add Code Here
