@@ -81,7 +81,7 @@ class ProfileWidget extends StatelessWidget {
 
   Widget _buildCoverImage(Size screenSize) {
     return Container(
-      height: screenSize.height / 2.6,
+      height: screenSize.height / 3.0,
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage('assets/cover.jpg'),
