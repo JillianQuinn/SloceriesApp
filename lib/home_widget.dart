@@ -30,22 +30,22 @@ class _HomeState extends State<Home> {
         items: [
           new BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            backgroundColor: Colors.green,
+            backgroundColor: Colors.green[900],
             title: Text('Home'),
           ),
           new BottomNavigationBarItem(
             icon: Icon(Icons.mail),
-            backgroundColor: Colors.green,
+            backgroundColor: Colors.green[900],
             title: Text('Messages'),
           ),
           new BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            backgroundColor: Colors.green,
+            backgroundColor: Colors.green[900],
             title: Text('Profile'),
           ),
           new BottomNavigationBarItem(
             icon: Icon(Icons.add),
-            backgroundColor: Colors.green,
+            backgroundColor: Colors.green[900],
             title: Text('Add Trip'),
           ),
         ],
